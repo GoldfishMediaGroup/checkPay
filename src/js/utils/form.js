@@ -16,7 +16,7 @@ const form = () => {
 
   function nameValidate() {
     const name = document.querySelectorAll('.input--name');
-
+  
     function validateName(item) {
       const inputValue = item.value.trim();
       const span = item.parentElement.nextElementSibling;
