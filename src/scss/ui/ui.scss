@@ -1,0 +1,29 @@
+// typography
+@import "./typo";
+@import "./buttons";
+@import "./form";
+@import "./fancybox";
+
+.swiper-pagination {
+  @include desk-only {
+    display: none;
+  }
+  @include small-tablet {
+    &,
+    &--fraction {
+      text-align: center;
+      margin: 0 auto;
+      transform: none !important;
+      padding-top: 24rem;
+      position: static !important;
+      & .swiper-pagination-bullet {
+        transition: all 0.3s !important;
+        background: $white;
+        margin: 0 4rem !important;
+      }
+      & .swiper-pagination-bullet-active {
+        background: $white;
+      }
+    }
+  }
+}

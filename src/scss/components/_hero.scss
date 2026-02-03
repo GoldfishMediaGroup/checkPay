@@ -1,0 +1,354 @@
+.hero {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1920rem;
+  background: url(./assets/images/heroBg.webp) no-repeat top/cover;
+  // .hero__container
+  @include small-tablet {
+    max-width: none;
+    background: url(./assets/images/heroBgMob.webp) no-repeat top/cover;
+  }
+
+  &__container {
+    height: 1080rem;
+    @include small-tablet {
+      height: 690rem;
+      overflow: hidden;
+    }
+  }
+
+  // .hero__inner
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  // .hero__decor
+
+  &__decor {
+    height: 576rem;
+    width: 238rem;
+    position: absolute;
+    @include small-tablet {
+      height: 241rem;
+      width: 97rem;
+    }
+  }
+  &__decor-line-box {
+    opacity: 0.3;
+  }
+  // .hero__decor--left
+
+  &__decor--left {
+    left: 168rem;
+    top: 158rem;
+    rotate: 90deg;
+
+    @include small-tablet {
+      left: 66rem;
+      top: 462rem;
+    }
+  }
+
+  // .hero__decor--right
+
+  &__decor--right {
+    right: 0;
+    top: 404rem;
+    @include small-tablet {
+      rotate: -90deg;
+      right: 64rem;
+      top: 41rem;
+    }
+  }
+
+  // .hero__decor-line
+
+  &__decor-line {
+    height: 2rem;
+    background: $white;
+    position: absolute;
+    @include small-tablet {
+      height: 1rem;
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      width: 13rem;
+      height: 13rem;
+      border-radius: 50%;
+      background: $white;
+      top: 50%;
+      transform: translateY(-50%);
+      @include small-tablet {
+        width: 5.6rem;
+        height: 5.6rem;
+      }
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+      transform: translateY(-50%) translateX(50%);
+    }
+  }
+
+  // .hero__decor-line--short
+
+  &__decor-line--short {
+    width: 238rem;
+    bottom: 0;
+    @include small-tablet {
+      width: 97rem;
+    }
+  }
+
+  // .hero__decor-line--long
+
+  &__decor-line--long {
+    width: 576rem;
+    transform: rotate(90deg);
+    right: 0;
+    bottom: 0;
+    transform-origin: right bottom;
+    @include small-tablet {
+      width: 241rem;
+    }
+    &::after {
+      display: none;
+    }
+  }
+
+  // .hero__decor-circle
+
+  &__decor-circle {
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    background: $white;
+    bottom: -6.5rem;
+    left: 0;
+    top: calc(100% - 6.5rem);
+    position: absolute;
+    animation: heroDecorAnim 6s linear infinite alternate;
+    @include small-tablet {
+      width: 5.6rem;
+      height: 5.6rem;
+      bottom: -2.8rem;
+      top: calc(100% - 2.8rem);
+      animation: heroDecorAnimMobile 6s linear infinite alternate;
+    }
+  }
+
+  // .hero__logo
+
+  &__logo {
+    position: absolute;
+    width: 1143rem;
+    height: 475rem;
+    left: 276rem;
+    top: 272rem;
+    @include small-tablet {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 398rem;
+      top: 154rem;
+      height: 164rem;
+    }
+  }
+
+  // .hero__billet
+
+  &__billet {
+    position: absolute;
+    top: 353rem;
+    left: 18rem;
+    @include small-tablet {
+      top: 160rem;
+      left: 38rem;
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      width: 50rem;
+      height: 60rem;
+      top: -27rem;
+      transform: rotate(-7deg);
+      right: -53rem;
+      background: url(./assets/images/heroSend.svg) no-repeat top/cover;
+      @include small-tablet {
+        width: 23rem;
+        height: 28rem;
+        transform: rotate(-1deg);
+        top: -37rem;
+        right: 50rem;
+      }
+    }
+  }
+
+  // .hero__billet-btn
+
+  &__billet-btn {
+    transform: rotate(7deg);
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: -10rem;
+      left: -14rem;
+      bottom: -10rem;
+      right: -14rem;
+      backdrop-filter: blur(22.5rem);
+      background: rgba(255, 255, 255, 0.3);
+      z-index: 1;
+      border-radius: 67rem;
+      @include small-tablet {
+        top: -5rem;
+        left: -7rem;
+        bottom: -5rem;
+        right: -7rem;
+      }
+    }
+  }
+
+  &__billet-btn-inner {
+    box-shadow:
+      inset 0 -7rem 4rem 0 rgba(255, 255, 255, 0.4),
+      0 4rem 9rem 0 rgba(142, 72, 115, 0.2);
+    background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 67rem;
+    padding: 12rem 38rem;
+    position: relative;
+    z-index: 2;
+    @include small-tablet {
+      padding: 6rem 20rem;
+    }
+  }
+
+  // .hero__logo-img
+
+  &__logo-img {
+    position: absolute;
+  }
+
+  // .hero__logo-img--1
+
+  &__logo-img--1 {
+    width: 720rem;
+    height: 265rem;
+    top: 0;
+    left: 0;
+    @include small-tablet {
+      width: 251rem;
+      height: 92rem;
+    }
+  }
+
+  // .hero__logo-img--2
+
+  &__logo-img--2 {
+    width: 770rem;
+    height: 314rem;
+    right: 0;
+    bottom: 0;
+    @include small-tablet {
+      width: 266rem;
+      height: 108rem;
+    }
+  }
+
+  // .hero__content
+
+  &__content {
+    position: absolute;
+    top: 745rem;
+    left: 733rem;
+    width: 827rem;
+    @include small-tablet {
+      text-align: center;
+      width: 100%;
+      left: 0;
+      top: 419rem;
+    }
+  }
+
+  // .hero__text
+
+  &__text {
+  }
+
+  // .hero__swiper-box
+
+  &__swiper-box {
+  }
+
+  // .hero__swiper
+
+  &__swiper {
+  }
+
+  // .hero__swiper-wrapper
+
+  &__swiper-wrapper {
+  }
+
+  // .hero__slide
+
+  &__slide {
+  }
+
+  // .hero__slide-text
+
+  &__slide-text {
+    padding-bottom: 7rem;
+    position: relative;
+    width: fit-content;
+    &::before {
+      width: 100%;
+      content: '';
+      position: absolute;
+      height: 2rem;
+      background: $white;
+      bottom: 0;
+      left: 0;
+    }
+    @include small-tablet {
+      margin: 0 auto;
+    }
+  }
+}
+
+@keyframes heroDecorAnim {
+  0% {
+    left: 0;
+    top: calc(100% - 6.5rem);
+  }
+  37% {
+    left: calc(100% - 6.5rem);
+    top: calc(100% - 6.5rem);
+  }
+  100% {
+    left: calc(100% - 6.5rem);
+    top: 0rem;
+  }
+}
+
+// Анимация для мобилки
+@keyframes heroDecorAnimMobile {
+  0% {
+    left: 0;
+    top: calc(100% - 2.8rem);
+  }
+  37% {
+    left: calc(100% - 2.8rem);
+    top: calc(100% - 2.8rem);
+  }
+  100% {
+    left: calc(100% - 2.8rem);
+    top: 0rem;
+  }
+}

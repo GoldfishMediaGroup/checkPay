@@ -1,0 +1,114 @@
+<section class="application">
+  <div class="application__container container">
+    <div class="application__inner">
+      <div class="application__decor application__decor--left">
+        <div class="application__decor-line-box">
+          <div class="application__decor-line application__decor-line--short"></div>
+          <div class="application__decor-line application__decor-line--long"></div>
+        </div>
+        <div class="application__decor-circle"></div>
+      </div>
+      <div class="application__decor application__decor--right">
+        <div class="application__decor-line-box">
+          <div class="application__decor-line application__decor-line--short"></div>
+          <div class="application__decor-line application__decor-line--long"></div>
+        </div>
+        <div class="application__decor-circle"></div>
+      </div>
+
+      <div class="application__head">
+        <p class="tl2 white center">
+          заполните форму,
+          <br />
+          чтобы начать с нами работать
+        </p>
+      </div>
+      <!-- data-popup-message="#popup__success" -->
+
+      <div class="application__form-wrap">
+        <form class="application__form form" data-dev action="">
+          <div class="form__label-box">
+            <label class="form__label">
+              <span class="form__label-inner">
+                <input
+                  class="form__input input--name"
+                  type="text"
+                  data-validate
+                  data-required="name"
+                  autocomplete="off"
+                  name="form[]"
+                  placeholder=""
+                />
+                <span class="form__placeholder txt12 light lh140">Имя*</span>
+              </span>
+              <span class="form__error txt10 light">Некорректное значение</span>
+            </label>
+
+            <label class="form__label">
+              <span class="form__label-inner">
+                <input
+                  class="form__input input--mail"
+                  type="text"
+                  data-validate
+                  data-required="email"
+                  autocomplete="off"
+                  name="form[]"
+                  placeholder=""
+                />
+
+                <span class="form__placeholder txt12 light lh140">E-mail*</span>
+              </span>
+              <span class="form__error txt10 light">Некорректное значение</span>
+            </label>
+
+            <label class="form__label">
+              <span class="form__label-inner">
+                <input class="form__input" type="text" autocomplete="off" name="form[]" placeholder="" />
+                <span class="form__placeholder txt12 light lh140">Название компании</span>
+              </span>
+              <span class="form__error txt10 light">Некорректное значение</span>
+            </label>
+
+            <label class="form__label">
+              <span class="form__label-inner">
+                <input
+                  class="form__input input--tel phone-mask"
+                  type="text"
+                  data-validate
+                  data-required="tel"
+                  autocomplete="off"
+                  name="form[]"
+                  placeholder=""
+                />
+                <span class="form__placeholder txt12 light lh140">Номер телефона*</span>
+              </span>
+              <span class="form__error txt10 light">Некорректное значение</span>
+            </label>
+          </div>
+
+          <div class="form__btn-box">
+            <!-- <label class="form__check-label">
+            <input class="form__check-input" type="checkbox" />
+            <span class="form__check-square"></span>
+            <span class="form__check-text">
+              Нажимая кнопку «Отправить», вы даете свое согласие на обработку персональных данных, определенных в
+              <a href="#">Согласии на обработку персональных данных</a>
+            </span>
+          </label> -->
+
+            <button disabled type="submit" class="btn-primary submit-btn">
+              <p class="txt28">Начать работу с нами</p>
+            </button>
+          </div>
+        </form>
+
+        <div class="application__success flex-cc dc white">
+          <p class="txt32 bold">Ваша заявка успешно отправлена!</p>
+          <p class="txt28">
+            Мы свяжемся с вами в ближайшее время по указанным данным. Обработка заявки обычно занимает 2-5 рабочих дней.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

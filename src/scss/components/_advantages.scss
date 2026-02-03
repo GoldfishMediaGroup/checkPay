@@ -1,0 +1,149 @@
+.advantages {
+  overflow: hidden;
+  @include desk-only {
+    // height: 100vh;
+    //   min-height: 1062rem;
+    // max-width: 1920rem;
+    // width: 100%;
+  }
+  // .advantages__container
+
+  &__container {
+    @include desk-only {
+    }
+  }
+
+  // .advantages__inner
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 84rem;
+    align-items: center;
+    justify-content: center;
+    @include desk-only {
+      height: 100vh;
+      min-height: 1062rem;
+      padding: 80rem 0;
+    }
+
+    @include small-tablet {
+      padding: 60rem 0;
+      gap: 24rem;
+    }
+  }
+
+  // .advantages__title
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4rem;
+    @include small-tablet {
+      text-align-last: left;
+      align-items: flex-start;
+    }
+  }
+
+  // .advantages__swiper-box
+
+  &__swiper-box {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+  }
+
+  // .advantages__swiper
+
+  &__swiper {
+    overflow: visible !important;
+    width: 100% !important;
+    @include desk-only {
+      height: 714rem !important;
+    }
+  }
+
+  // .advantages__swiper-wrapper
+
+  &__swiper-wrapper {
+  }
+
+  // .advantages__swiper-slide
+
+  &__swiper-slide {
+    width: 714rem !important;
+    height: 588rem !important;
+    overflow: visible !important;
+    @include small-tablet {
+      width: 262rem !important;
+      height: 312rem !important;
+    }
+    @include desk-only {
+      &.swiper-slide-prev {
+        & .advantages__slide-inner {
+          opacity: 0.7;
+          scale: 0.8;
+          transform: rotateZ(3deg) !important;
+        }
+      }
+
+      &.swiper-slide-next {
+        & .advantages__slide-inner {
+          transform: rotateZ(-3deg) !important;
+          scale: 0.8;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  // .advantages__slide-inner
+
+  &__slide-inner {
+    box-shadow:
+      19rem 6rem 43rem 0 rgba(142, 72, 115, 0.1),
+      74rem 25rem 78rem 0 rgba(142, 72, 115, 0.09),
+      463rem 154rem 137rem 0 rgba(142, 72, 115, 0);
+    border-radius: 32rem;
+    padding: 40rem;
+    background: $white;
+    width: 100%;
+    transition: 0.5s;
+    height: 100%;
+    @include small-tablet {
+      padding: 20rem;
+      border-radius: 12rem;
+    }
+  }
+
+  // .advantages__slide-content
+
+  &__slide-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25rem;
+    @include small-tablet {
+      gap: 10rem;
+    }
+  }
+
+  // .advantages__slide-num
+
+  &__slide-num {
+    position: absolute;
+    font-weight: 700;
+    font-size: 20rem;
+    color: rgba(73, 57, 80, 0.2);
+    bottom: 40rem;
+    left: 40rem;
+    @include small-tablet {
+      bottom: 20rem;
+      left: 20rem;
+      font-size: 12rem;
+    }
+  }
+}

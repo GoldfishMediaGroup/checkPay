@@ -1,0 +1,70 @@
+.swiper-button-perv,
+.swiper-button-next {
+  margin: 0 !important;
+  position: static !important;
+  &::after {
+    display: none;
+  }
+}
+.btn-primary {
+  border-radius: 64rem;
+  padding: 14rem 34rem;
+  background: $white;
+  transition:
+    color 0.3s,
+    background 0.3s;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  @include small-tablet {
+    width: 100%;
+    padding: 2rem;
+  }
+  &[disabled] {
+    pointer-events: none;
+    & p {
+      opacity: 0.5;
+    }
+  }
+  & p {
+    font-weight: 700;
+    font-size: 28rem;
+    transition: opacity 0.3s;
+    line-height: 143%;
+    @include small-tablet {
+      font-weight: 700 !important;
+      font-size: 18rem;
+      line-height: 222%;
+    }
+  }
+  &:hover {
+    background: $pink;
+    color: $white;
+  }
+  &:active {
+    background: $darkPink;
+    color: $white;
+  }
+}
+.skip {
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+  position: absolute;
+  right: 0;
+  bottom: 30rem;
+  transition: opacity 0.5s;
+  @include small-tablet {
+    display: none;
+  }
+  &:hover {
+    opacity: 1;
+  }
+
+  // .skip_arr
+
+  &_arr {
+    width: 40rem;
+    height: 40rem;
+  }
+}
