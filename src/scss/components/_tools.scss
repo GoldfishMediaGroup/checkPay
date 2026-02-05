@@ -105,7 +105,7 @@
       align-items: center;
       justify-content: flex-end;
 
-      transition: 0.7s;
+      transition: 0.5s;
       top: 50%;
       position: absolute;
       transform: translateY(-50%);
@@ -167,7 +167,7 @@
     justify-content: space-between;
     flex-direction: column;
 
-    transition: opacity 0.7s;
+    transition: opacity 0.5s;
     & .txt24 {
       font-family: 'Unbounded';
     }
@@ -183,7 +183,7 @@
     inset: 0;
 
     background: $white;
-    transition: opacity 0.7s;
+    transition: opacity 0.5s;
     border-radius: inherit;
 
     // padding: 32rem;
@@ -358,7 +358,7 @@
         left: 0;
         top: calc(100% - 6.5rem);
         position: absolute;
-        transition: left 0.7s;
+        transition: left 0.5s;
       }
     }
   }

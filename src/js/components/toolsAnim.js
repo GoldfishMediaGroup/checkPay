@@ -50,7 +50,7 @@ function toolsAnim() {
         gsap.to(titles, {
           opacity: 1,
           y: 0,
-          delay: 0.3,
+          delay: 0.2,
           filter: 'blur(0px)',
           duration: 0.6,
           stagger: 0.2, // txt28 пойдет чуть позже txt32 автоматически
@@ -107,7 +107,7 @@ function toolsAnim() {
           scrollTrigger: {
             trigger: '.tools__inner',
             start: 'top top',
-            end: `+=${totalCards * 120}%`,
+            end: `+=${totalCards * 100}%`,
             pin: true,
             scrub: 1,
             invalidateOnRefresh: true,
