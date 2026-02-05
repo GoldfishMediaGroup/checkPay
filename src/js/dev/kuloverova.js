@@ -29,6 +29,7 @@ gsap.registerPlugin(ScrollTrigger);
 smoothScroll();
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.body.style.opacity = '1'
   popup();
   form();
   scroll();

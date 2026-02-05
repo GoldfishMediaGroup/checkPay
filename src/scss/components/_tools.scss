@@ -105,7 +105,7 @@
       align-items: center;
       justify-content: flex-end;
 
-      transition: 0.5s;
+      transition: 0.7s;
       top: 50%;
       position: absolute;
       transform: translateY(-50%);
@@ -167,7 +167,7 @@
     justify-content: space-between;
     flex-direction: column;
 
-    transition: opacity 0.5s;
+    transition: opacity 0.7s;
     & .txt24 {
       font-family: 'Unbounded';
     }
@@ -183,7 +183,7 @@
     inset: 0;
 
     background: $white;
-    transition: opacity 0.5s;
+    transition: opacity 0.7s;
     border-radius: inherit;
 
     // padding: 32rem;
@@ -246,7 +246,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s linear;
+    transition: background 0.5s linear;
     @include small-tablet {
       width: 44rem;
       height: 44rem;
@@ -261,7 +261,7 @@
     width: 40rem;
     height: 40rem;
     & svg path {
-      transition: fill 0.3s linear;
+      transition: fill 0.5s linear;
     }
     @include small-tablet {
       width: 26rem;
@@ -301,11 +301,7 @@
 
     & .txt32 {
       font-family: 'Unbounded';
-      @include desk-only {
-        opacity: 0;
 
-        animation: animate 0.5s ease-in-out 0.2s 1 forwards;
-      }
 
       @include small-tablet {
         font-size: 18rem;
@@ -314,10 +310,7 @@
 
     & .txt28 {
       opacity: 0.7;
-      @include desk-only {
-        opacity: 0;
-        animation: animate 0.5s ease-in-out 0.3s 1 forwards;
-      }
+
     }
   }
 
@@ -365,21 +358,10 @@
         left: 0;
         top: calc(100% - 6.5rem);
         position: absolute;
+        transition: left 0.7s;
       }
     }
   }
 
-  @keyframes animate {
-    from {
-      opacity: 0;
-      transform: translate(0, 10rem);
-      filter: blur(10rem);
-    }
 
-    to {
-      opacity: 1;
-      transform: translate(0);
-      filter: blur(0);
-    }
-  }
 }

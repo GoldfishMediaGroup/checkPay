@@ -15,7 +15,7 @@ function heroSwiper() {
       crossFade: true,
     },
     autoplay: {
-      delay: 3000,
+      delay: 1800,
       disableOnInteraction: false,
     },
     loop: true,
