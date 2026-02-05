@@ -94,7 +94,7 @@ const form = () => {
         if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(inputValue) && inputValue != '') {
           // span.classList.add('active');
           parent.classList.add('_form-error');
-        } else if (inputValue.length < 16) {
+        } else if (inputValue.length < 10) {
           parent.classList.add('_form-error');
         } else {
           // span.classList.remove('active');

@@ -107,9 +107,11 @@
 
   &__link {
     position: relative;
-    &:hover {
-      &::before {
-        width: 100%;
+    @include desk-only {
+      &:hover {
+        &::before {
+          width: 100%;
+        }
       }
     }
     &::before {

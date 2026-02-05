@@ -21,14 +21,30 @@ function expertiseAnim() {
       scrollTrigger: {
         trigger: '.expertise__inner',
         start: 'top top',
-        end: `+=${cards.length * 200}%`,
+        end: `+=${cards.length * 100}%`,
         pin: true,
         scrub: 2,
-        invalidateOnRefresh: true 
+        invalidateOnRefresh: true
       }
     });
 
     cards.forEach((card, i) => {
+      const rotationAngle = (() => {
+        switch (i) {
+          case 0:
+            return 6; // 1-я карточка
+          case 1:
+            return -6; // 2-я карточка
+          case 2:
+            return 4; // 3-я карточка
+          case 3:
+            return -8; // 4-я карточка (твой новый угол)
+          case 4:
+            return 7; // 5-я карточка (твой новый угол)
+          default:
+            return 0; // Для всех остальных, если они есть
+        }
+      })();
       tl.to(card, {
         y: i * 6,
         duration: 1,
@@ -38,14 +54,13 @@ function expertiseAnim() {
       tl.to(
         card,
         {
-          rotation: i % 3 === 0 ? 6 : i % 3 === 1 ? -6 : 4,
+          rotation: rotationAngle,
           duration: 0.8,
           ease: 'power1.out'
         },
-        '>0.1'
+        '-=0.6'
       );
     });
-
 
     return () => {
       gsap.set(cards, { clearProps: 'all' });
