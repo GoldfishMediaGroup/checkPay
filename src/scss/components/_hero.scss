@@ -281,32 +281,60 @@
   &__text {
   }
 
-  // .hero__swiper-box
+  // // .hero__swiper-box
 
-  &__swiper-box {
-  }
+  // &__swiper-box {
+  // }
 
-  // .hero__swiper
+  // // .hero__swiper
 
-  &__swiper {
-  }
+  // &__swiper {
+  // }
 
-  // .hero__swiper-wrapper
+  // // .hero__swiper-wrapper
 
-  &__swiper-wrapper {
-  }
+  // &__swiper-wrapper {
+  // }
 
-  // .hero__slide
+  // // .hero__slide
 
-  &__slide {
-  }
+  // &__slide {
+  // }
 
-  // .hero__slide-text
+  // // .hero__slide-text
 
-  &__slide-text {
-    padding-bottom: 7rem;
-    position: relative;
+  // &__slide-text {
+  //   padding-bottom: 7rem;
+  //   position: relative;
+  //   width: fit-content;
+  //   &::before {
+  //     width: 100%;
+  //     content: '';
+  //     position: absolute;
+  //     height: 2rem;
+  //     background: $white;
+  //     bottom: 0;
+  //     left: 0;
+  //   }
+  //   @include small-tablet {
+  //     margin: 0 auto;
+  //   }
+  // }
+
+  // .hero__typewriter
+
+  &__typewriter {
     width: fit-content;
+  @include small-tablet {
+    width: 100%;
+  }
+  }
+
+  // .hero__typewriter-text
+
+  &__typewriter-text {
+    position: relative;
+
     &::before {
       width: 100%;
       content: '';
@@ -316,9 +344,14 @@
       bottom: 0;
       left: 0;
     }
-    @include small-tablet {
-      margin: 0 auto;
-    }
+    margin-right: 2rem;
+  }
+
+  // .hero__typewriter-cursor
+
+  &__typewriter-cursor {
+    border-left: 4rem solid $white;
+    margin-left: 3rem;
   }
 }
 

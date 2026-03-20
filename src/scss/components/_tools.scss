@@ -43,7 +43,7 @@
 
     @include small-tablet {
       gap: 24rem;
-      padding: 60rem 0;
+      padding: 60rem 0 0rem;
     }
   }
 
@@ -117,9 +117,9 @@
 
       &:nth-child(1),
       &:nth-child(2) {
-        top: 0;
+        top: 50%;
         left: 0;
-        transform: translate(0, 0);
+        transform: translate(0, -50%);
 
         width: 714rem;
         height: 642rem;
@@ -166,8 +166,19 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    & .txt80 {
+      transition: color 0.5s;
+    }
+    &:hover {
+      background: rgba(255, 255, 255, 0.311);
+      & .txt80 {
+        color: $darkPink;
+      }
+    }
 
-    transition: opacity 0.5s;
+    transition:
+      opacity 0.5s,
+      background 0.3s;
     & .txt24 {
       font-family: 'Unbounded';
     }
@@ -302,7 +313,6 @@
     & .txt32 {
       font-family: 'Unbounded';
 
-
       @include small-tablet {
         font-size: 18rem;
       }
@@ -310,7 +320,6 @@
 
     & .txt28 {
       opacity: 0.7;
-
     }
   }
 
@@ -362,6 +371,4 @@
       }
     }
   }
-
-
 }
