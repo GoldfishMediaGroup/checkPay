@@ -12,29 +12,97 @@ function headerBurger() {
   const logo = document.querySelector('.header__logo');
   const navWrapper = document.querySelector('.header__menu');
 
-
-
   // Класс для блокировки скролла
   const disableScrollClass = 'no-scroll';
 
   function openBurger() {
+    gsap.set('.header__link', { opacity: 0, y: '20' });
+    gsap.set('.header .btn-primary', { opacity: 0, scale: 0.9 });
+    gsap.set('.header__contacts li', { opacity: 0, x: -50 });
     body.classList.add(disableScrollClass);
 
     burger.classList.add('isOpen');
     navWrapper.classList.add('isOpen');
 
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
+    // window.scrollTo({
+    //   top: 0,
+    //   left: 0,
+    //   behavior: 'smooth'
+    // });
+
+    gsap
+      .timeline()
+      .to('.header__link', {
+        opacity: 1,
+        y: 0,
+        delay: 0.2,
+        direction: 0.6,
+        stagger: {
+          amount: 0.2
+        }
+      })
+      .to(
+        '.header .btn-primary',
+        {
+          opacity: 1,
+          scale: 1,
+          direction: 0.3
+        },
+        '-=0.2'
+      )
+      .to(
+        '.header__contacts li',
+        {
+          opacity: 1,
+          x: 0,
+          direction: 0.2,
+          stagger: {
+            amount: 0.1
+          }
+        },
+        '-=0.3'
+      );
   }
 
   function closeBurger() {
     body.classList.remove(disableScrollClass);
-
-    burger.classList.remove('isOpen');
-    navWrapper.classList.remove('isOpen');
+    gsap
+      .timeline()
+      .to('.header__contacts li', {
+        opacity: 0,
+        x: -50,
+        direction: 0.4,
+        stagger: {
+          amount: 0.2,
+          from: 'end'
+        }
+      })
+      .to(
+        '.header .btn-primary',
+        {
+          opacity: 0,
+          scale: 0.9,
+          direction: 0.4
+        },
+        '-=0.2'
+      )
+      .to(
+        '.header__link',
+        {
+          opacity: 0,
+          y: 20,
+          direction: 0.6,
+          stagger: {
+            amount: 0.2,
+            from: 'end'
+          },
+          onComplete: () => {
+            burger.classList.remove('isOpen');
+            navWrapper.classList.remove('isOpen');
+          }
+        },
+        '-=0.4'
+      );
   }
 
   burger.addEventListener('click', () => {
@@ -45,8 +113,8 @@ function headerBurger() {
 
   // navWrapper.addEventListener('click', (e) => {
   //   if (
-  //     e.target.closest('.header__link') 
-  //     // e.target.closest('.header__social') 
+  //     e.target.closest('.header__link')
+  //     // e.target.closest('.header__social')
   //   ) {
   //     closeBurger();
   //   }
@@ -57,8 +125,6 @@ function headerBurger() {
   //     closeBurger();
   //   }
   // });
-
-
 }
 
 export default headerBurger;

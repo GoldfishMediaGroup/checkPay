@@ -18,7 +18,7 @@ export let lenis;
 
 function smoothScroll() {
   lenis = new Lenis({
-    duration: 0.8,
+    duration: 1,
     easing: (t) => t,
     direction: 'vertical',
     smoothWheel: true
@@ -32,4 +32,5 @@ function smoothScroll() {
 
   gsap.ticker.lagSmoothing(0);
 }
+
 export default smoothScroll;

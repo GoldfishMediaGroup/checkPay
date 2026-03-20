@@ -1,11 +1,71 @@
 .advantages {
   overflow: hidden;
+  position: relative;
   @include desk-only {
     // height: 100vh;
     //   min-height: 1062rem;
     // max-width: 1920rem;
     // width: 100%;
   }
+
+  position: relative;
+  overflow: hidden;
+
+  &__cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    scale: 0;
+    opacity: 0;
+    will-change: transform;
+    z-index: 20;
+    @include small-tablet {
+      display: none;
+    }
+  }
+  &__cursor-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 135rem;
+    height: 135rem;
+    background-color: $black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; // Важно: чтобы клики проходили сквозь курсор
+    z-index: 1000;
+
+    svg {
+      width: 40rem;
+      height: 40rem;
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+  }
+
+  &__nav-zones {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1920rem;
+    height: 100%;
+    display: flex;
+    z-index: 50;
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  &__nav-zone {
+    flex: 1;
+    height: 100%;
+    cursor: none;
+  }
+
   // .advantages__container
 
   &__container {
@@ -21,6 +81,23 @@
     gap: 84rem;
     align-items: center;
     justify-content: center;
+    // &::before {
+    //   position: absolute;
+    //   left: 50%;
+    //   top: 50%;
+    //   transform: translate(-50%, -50%) scaleX(-1) rotate(180deg);
+    //   content: '';
+    //   width: 100vw;
+    //   height: 110vh;
+    //   min-height: 900rem;
+    //   pointer-events: none;
+    //   background: url(./assets/images/heroBg.webp) no-repeat top/cover;
+
+    //   transform-origin: center center;
+    //   @include small-tablet {
+    //     background: url(./assets/images/heroBgMob.webp) no-repeat top/cover;
+    //   }
+    // }
     @include desk-only {
       height: 100vh;
       min-height: 1062rem;
@@ -41,6 +118,8 @@
     align-items: center;
     text-align: center;
     gap: 4rem;
+    position: relative;
+    z-index: 100;
     @include small-tablet {
       text-align-last: left;
       align-items: flex-start;
@@ -75,27 +154,55 @@
   // .advantages__swiper-slide
 
   &__swiper-slide {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // user-select: none;
+    /* Центрируем точку трансформации */
+    // will-change: transform;
+    flex-shrink: 0;
     width: 714rem !important;
     height: 588rem !important;
     overflow: visible !important;
+
     @include small-tablet {
       width: 262rem !important;
       height: 312rem !important;
     }
     @include desk-only {
+      & .advantages__slide-inner {
+        opacity: 0.5;
+        scale: 0.8;
+        transform: rotateZ(20deg) translateY(-340rem) !important;
+      }
       &.swiper-slide-prev {
         & .advantages__slide-inner {
+          transform: rotateZ(8deg) translateY(-95rem) !important;
+          scale: 0.85;
           opacity: 0.7;
-          scale: 0.8;
-          transform: rotateZ(3deg) !important;
+        }
+      }
+      &.swiper-slide-active {
+        & .advantages__slide-inner {
+          opacity: 1;
+          scale: 1;
+          transform: rotateZ(0) !important;
         }
       }
 
       &.swiper-slide-next {
         & .advantages__slide-inner {
-          transform: rotateZ(-3deg) !important;
-          scale: 0.8;
+          transform: rotateZ(-8deg) translateY(-95rem) !important;
+          scale: 0.85;
           opacity: 0.7;
+        }
+      }
+
+      &.swiper-slide-next ~ .swiper-slide {
+        & .advantages__slide-inner {
+          opacity: 0.5;
+          scale: 0.8;
+          transform: rotateZ(-20deg) translateY(-340rem) !important;
         }
       }
     }
@@ -112,8 +219,9 @@
     padding: 40rem;
     background: $white;
     width: 100%;
-    transition: 0.5s;
+    transition: 0.6s;
     height: 100%;
+    position: relative;
     @include small-tablet {
       padding: 20rem;
       border-radius: 12rem;

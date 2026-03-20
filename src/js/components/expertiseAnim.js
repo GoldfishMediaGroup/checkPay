@@ -1,5 +1,6 @@
 import { gsap, ScrollTrigger } from 'gsap/all';
 
+
 function expertiseAnim() {
   const section = document.querySelector('.expertise');
   if (!section) return;
@@ -21,7 +22,7 @@ function expertiseAnim() {
       scrollTrigger: {
         trigger: '.expertise__inner',
         start: 'top top',
-        end: `+=${cards.length * 100}%`,
+        end: `+=${cards.length * 130}%`,
         pin: true,
         scrub: 2,
         invalidateOnRefresh: true
@@ -47,7 +48,7 @@ function expertiseAnim() {
       })();
       tl.to(card, {
         y: i * 6,
-        duration: 1,
+        duration: 2,
         ease: 'power2.out'
       });
 
@@ -60,6 +61,11 @@ function expertiseAnim() {
         },
         '-=0.6'
       );
+      tl.to(card, {
+        y: i * 6,
+        duration: 2,
+        ease: 'power2.out'
+      });
     });
 
     return () => {

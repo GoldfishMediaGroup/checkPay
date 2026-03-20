@@ -183,3 +183,102 @@
     }
   }
 }
+
+.cookie {
+  position: fixed;
+  border-radius: 32rem;
+  width: 493rem;
+  padding: 73rem 24rem 24rem;
+  background: $white;
+  left: 64rem;
+  bottom: 48rem;
+
+  gap: 28rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: $white url(../../assets/images/cookieBg.webp) no-repeat top/cover;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    visibility 0.4s,
+    opacity 0.4s,
+    z-index 0.4s,
+    bottom 0.4s;
+
+  &--show {
+    opacity: 1;
+    visibility: visible;
+    z-index: 200;
+  }
+  @include small-tablet {
+    width: 289rem;
+    border-radius: 32rem;
+    padding: 45rem 8rem 13rem;
+    left: 10rem;
+    bottom: 14rem;
+    gap: 16rem;
+  }
+  & .txt20 {
+    opacity: 0.7;
+    line-height: 100%;
+    @include small-tablet {
+      font-size: 12rem;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    width: 111rem;
+    height: 108rem;
+    top: -60rem;
+    left: 50%;
+    transform: translateX(-50%);
+    @include small-tablet {
+      width: 69rem;
+      height: 68rem;
+      top: -34rem;
+    }
+  }
+  &__btn {
+    border-radius: 64rem;
+    padding: 14rem 34rem;
+    position: relative;
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      border-radius: inherit;
+    }
+    &::before {
+      inset: 0;
+      background: url(../../assets/images/cookieBtn.webp) no-repeat top/cover;
+    }
+
+    &::after {
+      inset: 1.4rem;
+      background: $white;
+      @include small-tablet {
+        inset: 1rem;
+      }
+    }
+    & span {
+      transition: scale 0.3s;
+      position: relative;
+      z-index: 2;
+      display: block;
+    }
+    &:hover {
+      & span {
+        scale: 1.04;
+      }
+    }
+    @include small-tablet {
+      width: 100%;
+    }
+  }
+}
