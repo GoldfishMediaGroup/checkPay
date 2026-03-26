@@ -1,3 +1,13 @@
+#expertiseAnchor {
+  height: 100vh;
+  position: absolute;
+  top: 100vh;
+  pointer-events: none;
+  @include small-tablet {
+    top: 0;
+  }
+}
+
 .expertise {
   overflow: hidden;
   position: relative;
@@ -17,7 +27,7 @@
 
     @include desk-only {
       height: 100vh;
-          min-height: 900rem;
+      min-height: 900rem;
     }
     @include small-tablet {
       padding: 60rem 0;

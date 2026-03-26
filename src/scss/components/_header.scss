@@ -36,11 +36,12 @@
     box-shadow: inset 0 -7rem 12rem 0 rgba(255, 255, 255, 0.4);
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%);
     padding: 15rem 32rem;
-    border-radius: 60rem;
+    border-radius: 24rem;
     @include small-tablet {
       width: 100%;
       margin: 0;
       padding: 8rem 8rem 8rem 16rem;
+      border-radius: 16rem;
     }
   }
 

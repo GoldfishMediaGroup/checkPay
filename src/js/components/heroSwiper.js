@@ -27,6 +27,8 @@ function heroSwiper() {
 
   // The typewriter element
   const typeWriterWrap = document.querySelector('.hero__typewriter');
+
+  if(!typeWriterWrap) return
   const typeWriterText = typeWriterWrap.querySelector('.hero__typewriter-text');
 
   const rawData = typeWriterText.getAttribute('data-array');
